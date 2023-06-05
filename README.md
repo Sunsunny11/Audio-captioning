@@ -6,5 +6,5 @@ Pytorch: Dual Transformer Decoder based Features Fusion Network for Automated Au
       title={Dual Transformer Decoder based Features Fusion Network for Automated Audio Captioning},  <br>
       author={Jianyuan Sun and Xubo Liu and Xinhao Mei and Volkan Kılıç and Mark D. Plumbley and Wenwu Wang}, <br>
       year={2023}, <br>
-      booktitle={INTERSPEECH2023} <br>
-}
+      booktitle={INTERSPEECH2023}} <br>
+
