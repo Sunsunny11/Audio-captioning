@@ -1,0 +1,63 @@
+mode: 'train'      # 'eval' 'test' 'finetune'
+dataset: 'Clotho'  # 'Clotho' 'AudioCaps'
+sos_token: Yes
+
+wav:
+  sr: 32000
+  window_size: 1024
+  hop_length: 320
+  mel_bins: 64
+  fmin: 50
+  fmax: 14000
+
+decoder:
+  decoder_only: Yes
+  nhead: 4
+  nhid: 128
+  nlayers: 2
+  dropout: 0.2
+  dim_feedforward: 2048
+  activation: 'gelu'
+
+encoder:
+  model: 'Cnn10'
+  freeze: No
+  pretrained: Yes
+
+word_embedding:
+  pretrained: No
+  freeze: Yes
+
+
+data:
+  #batch_size: 32
+  batch_size:  32  #32
+  num_workers: 8
+
+
+training:
+  alpha: 0.2
+  label_smoothing: Yes
+  spec_augmentation: Yes
+  epochs: 30
+  lr: !!float 1e-3
+  clip_grad: 2
+  seed: 18
+  vlad: No     #No
+  AudioTransformer: Yes
+
+path:
+  vocabulary: 'data/{}/pickles/words_list.p'
+  encoder: 'pretrained_models/audio_encoder/'
+  word2vec: 'pretrained_models/word2vec/w2v_all_vocabulary.model'
+
+rl:
+  mode: 'greedy'    #'beam'
+  epochs: 25
+  model: "pretrained_models/models/submission1/best_model.pt"
+  lr: !!float 1e-4
+
+Text_Augment:
+  Augmentation: False
+  method: 'insert'    ## method: instead, insert, translation
+
