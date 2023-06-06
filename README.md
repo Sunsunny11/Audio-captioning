@@ -1,5 +1,7 @@
 # Dual Transformer for Audio captioning
 Pytorch: Dual Transformer Decoder based Features Fusion Network for Automated Audio Captioning
++ Create conda environment with dependencies: **conda env create -f environment.yml -n name**
+
 
 # Citation
 @INPROCEEDING{sun2023dual, <br>
